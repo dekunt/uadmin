@@ -12,7 +12,7 @@ Installation
 
 .. code-block:: bash
 
-    $ go get -u github.com/uadmin/uadmin/...
+    $ go get -u github.com/dekunt/uadmin/...
 
 To test if your installation is fine, run the **uadmin** command line:
 
@@ -43,12 +43,12 @@ Let's build your first app which is a Todo list. First, we will create a folder 
     $ mkdir -p ~/go/src/github.com/your_name/todo
     $ cd ~/go/src/github.com/your_name/todo
     $ uadmin prepare
-    [   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/models
-    [   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/api
-    [   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/views
-    [   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/media
-    [   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/static
-    [   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/templates
+    [   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/models
+    [   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/api
+    [   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/views
+    [   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/media
+    [   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/static
+    [   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/templates
 
 Use your favorite editor to create "main.go" inside that path. Put the
 following code in "main.go".
@@ -58,7 +58,7 @@ following code in "main.go".
     package main
 
     import (
-        "github.com/uadmin/uadmin"
+        "github.com/dekunt/uadmin"
         "time"
     )
 

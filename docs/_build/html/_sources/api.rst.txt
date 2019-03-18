@@ -445,7 +445,7 @@ Let's create a new file in the models folder named "expression.go" with the foll
 
     package models
 
-    import "github.com/uadmin/uadmin"
+    import "github.com/dekunt/uadmin"
 
     // ---------------- DROP DOWN LIST ----------------
     // Status ...
@@ -901,23 +901,23 @@ Check your terminal to see the result.
 
     [   OK   ]   Initializing DB: [13/13]
 
-    (/home/dev1/go/src/github.com/uadmin/uadmin/db.go:428) 
+    (/home/dev1/go/src/github.com/dekunt/uadmin/db.go:428)
     [2018-11-10 12:43:07]  [0.09ms]  SELECT count(*) FROM "languages"  WHERE "languages"."deleted_at" IS NULL  
     [0 rows affected or returned ] 
 
-    (/home/dev1/go/src/github.com/uadmin/uadmin/db.go:298) 
+    (/home/dev1/go/src/github.com/dekunt/uadmin/db.go:298)
     [2018-11-10 12:43:07]  [0.17ms]  SELECT * FROM "languages"  WHERE "languages"."deleted_at" IS NULL AND ((active = 'true'))  
     [1 rows affected or returned ] 
 
-    (/home/dev1/go/src/github.com/uadmin/uadmin/db.go:238) 
+    (/home/dev1/go/src/github.com/dekunt/uadmin/db.go:238)
     [2018-11-10 12:43:07]  [0.16ms]  SELECT * FROM "languages"  WHERE "languages"."deleted_at" IS NULL AND ((`default` = 'true')) ORDER BY "languages"."id" ASC LIMIT 1  
     [1 rows affected or returned ] 
 
-    (/home/dev1/go/src/github.com/uadmin/uadmin/db.go:162) 
+    (/home/dev1/go/src/github.com/dekunt/uadmin/db.go:162)
     [2018-11-10 12:43:07]  [0.32ms]  SELECT * FROM "dashboard_menus"  WHERE "dashboard_menus"."deleted_at" IS NULL  
     [13 rows affected or returned ] 
 
-    (/home/dev1/go/src/github.com/uadmin/uadmin/db.go:428) 
+    (/home/dev1/go/src/github.com/dekunt/uadmin/db.go:428)
     [2018-11-10 12:43:07]  [0.07ms]  SELECT count(*) FROM "users"  WHERE "users"."deleted_at" IS NULL  
     [0 rows affected or returned ] 
 
@@ -941,7 +941,7 @@ Let's create a new file in the models folder named "expression.go" with the foll
 
     package models
 
-    import "github.com/uadmin/uadmin"
+    import "github.com/dekunt/uadmin"
 
     // ---------------- DROP DOWN LIST ----------------
     // Status ...

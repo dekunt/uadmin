@@ -11,7 +11,7 @@ Create a file named "add_friend.go" inside the api folder with the following cod
         "strings"
 
         "github.com/username/todo/models"
-        "github.com/uadmin/uadmin"
+        "github.com/dekunt/uadmin"
     )
 
     // AddFriendHandler !

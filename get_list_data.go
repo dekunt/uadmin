@@ -13,7 +13,7 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
-	"github.com/uadmin/uadmin/helper"
+	"github.com/dekunt/uadmin/helper"
 )
 
 // GetListSchema returns a schema for list view

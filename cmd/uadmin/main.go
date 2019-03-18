@@ -15,8 +15,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/uadmin/uadmin"
-	"github.com/uadmin/uadmin/helper"
+	"github.com/dekunt/uadmin"
+	"github.com/dekunt/uadmin/helper"
 )
 
 // Help is the command line help for the cli tool

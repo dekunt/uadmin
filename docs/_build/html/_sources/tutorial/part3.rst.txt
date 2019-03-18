@@ -8,7 +8,7 @@ Linking a model to another model is as simple as creating a field using a foreig
 
     import (
 	    "time"
-	    "github.com/uadmin/uadmin"
+	    "github.com/dekunt/uadmin"
     )
 
     // Todo model ...
@@ -36,7 +36,7 @@ Create a file named friend.go inside your models folder, containing the followin
 
     package models
 
-    import "github.com/uadmin/uadmin"
+    import "github.com/dekunt/uadmin"
 
     // Friend model ...
     type Friend struct {

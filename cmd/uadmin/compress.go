@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/uadmin/uadmin"
+	"github.com/dekunt/uadmin"
 )
 
 // Compress takes a folder path and compresses the files inside it

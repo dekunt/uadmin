@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/uadmin/uadmin/colors"
+	"github.com/dekunt/uadmin/colors"
 )
 
 // var langMap map[string]map[string]string

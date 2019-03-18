@@ -1,6 +1,6 @@
 package models
 
-import "github.com/uadmin/uadmin"
+import "github.com/dekunt/uadmin"
 
 // Nationality ...
 type Nationality int

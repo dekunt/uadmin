@@ -2,11 +2,11 @@
 
 Easy to use, blazing fast and secure.
 
-[![go report card](https://goreportcard.com/badge/github.com/uadmin/uadmin "go report card")](https://goreportcard.com/report/github.com/uadmin/uadmin)
-[![GoDoc](https://godoc.org/github.com/uadmin/uadmin?status.svg)](https://godoc.org/github.com/uadmin/uadmin)
+[![go report card](https://goreportcard.com/badge/github.com/dekunt/uadmin "go report card")](https://goreportcard.com/report/github.com/dekunt/uadmin)
+[![GoDoc](https://godoc.org/github.com/dekunt/uadmin?status.svg)](https://godoc.org/github.com/dekunt/uadmin)
 [![codecov](https://codecov.io/gh/uadmin/uadmin/branch/master/graph/badge.svg)](https://codecov.io/gh/uadmin/uadmin)
 [![Build Status](https://travis-ci.org/uadmin/uadmin.svg?branch=master)](https://travis-ci.org/uadmin/uadmin)
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/uadmin/uadmin/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/dekunt/uadmin/blob/master/LICENSE)
 
 Originally open source by [IntegrityNet Solutions and Services](https://www.integritynet.biz/)
 
@@ -25,17 +25,17 @@ Social Media:
 
 ### Dashboard Menu
 
-![Dashboard](https://github.com/uadmin/uadmin/raw/master/docs/assets/uadmindashboard.png)
+![Dashboard](https://github.com/dekunt/uadmin/raw/master/docs/assets/uadmindashboard.png)
 &nbsp;
 
 ### Log
 
-![Log](https://github.com/uadmin/uadmin/raw/master/docs/assets/log.png)
+![Log](https://github.com/dekunt/uadmin/raw/master/docs/assets/log.png)
 &nbsp;
 
 ### Login Form
 
-![Login Form](https://github.com/uadmin/uadmin/raw/master/docs/tutorial/assets/loginform.png)
+![Login Form](https://github.com/dekunt/uadmin/raw/master/docs/tutorial/assets/loginform.png)
 &nbsp;
 
 ## Features
@@ -82,7 +82,7 @@ Social Media:
 ## Installation
 
 ```bash
-$ go get -u github.com/uadmin/uadmin/...
+$ go get -u github.com/dekunt/uadmin/...
 ```
 
 To test if your installation is fine, run the `uadmin` command line:
@@ -113,10 +113,10 @@ Let's build your first app which is a Todo list. First, we will create a folder 
 $ mkdir -p ~/go/src/github.com/your_name/todo
 $ cd ~/go/src/github.com/your_name/todo
 $ uadmin prepare
-[   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/models
-[   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/api
-[   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/views
-[   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/media
+[   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/models
+[   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/api
+[   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/views
+[   OK   ]   Created: /home/abdullah/go/src/github.com/dekunt/todo1/media
 [   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/static
 [   OK   ]   Created: /home/abdullah/go/src/github.com/uadmin/todo1/templates
 ```

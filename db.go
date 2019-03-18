@@ -15,7 +15,7 @@ import (
 
 	// Enable SQLLite
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
-	"github.com/uadmin/uadmin/colors"
+	"github.com/dekunt/uadmin/colors"
 )
 
 var db *gorm.DB

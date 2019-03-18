@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/jinzhu/gorm"
-	"github.com/uadmin/uadmin/colors"
-	"github.com/uadmin/uadmin/helper"
+	"github.com/dekunt/uadmin/colors"
+	"github.com/dekunt/uadmin/helper"
 )
 
 // HideInDashboarder used to check if a model should be hidden in

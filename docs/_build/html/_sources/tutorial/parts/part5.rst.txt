@@ -6,7 +6,7 @@ Create a file named item.go inside your models folder, containing the following 
 
     package models
 
-    import "github.com/uadmin/uadmin"
+    import "github.com/dekunt/uadmin"
 
     // Item model ...
     type Item struct {
@@ -64,7 +64,7 @@ Now let's try something much cooler that we can apply in the Item model by addin
 
     package models
 
-    import "github.com/uadmin/uadmin"
+    import "github.com/dekunt/uadmin"
 
     // Item model ...
     type Item struct {
@@ -242,7 +242,7 @@ To the item.go inside the models folder
 
     package models
 
-    import "github.com/uadmin/uadmin"
+    import "github.com/dekunt/uadmin"
 
     // Item model ...
     type Item struct {

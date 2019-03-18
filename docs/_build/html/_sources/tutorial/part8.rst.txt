@@ -17,7 +17,7 @@ For the case scenario, our client requests a data that returns only the last 5 a
         "strings"
 
         "github.com/username/todo/models"
-        "github.com/uadmin/uadmin"
+        "github.com/dekunt/uadmin"
     )
 
     // CustomListHandler !

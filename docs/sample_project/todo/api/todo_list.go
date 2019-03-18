@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/uadmin/uadmin"
-	"github.com/uadmin/uadmin/docs/sample_project/todo/models"
+	"github.com/dekunt/uadmin"
+	"github.com/dekunt/uadmin/docs/sample_project/todo/models"
 )
 
 // TodoListHandler !

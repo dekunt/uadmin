@@ -3,7 +3,7 @@ language: go
 go:
   - "1.10"
 
-go_import_path: github.com/uadmin/uadmin
+go_import_path: github.com/dekunt/uadmin
 
 script:
   - go test -coverprofile=coverage.txt -covermode=atomic

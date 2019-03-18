@@ -15,7 +15,7 @@ The code below is an example of internal model:
     import (
 	    "time"
 	    "github.com/username/todo/models"
-	    "github.com/uadmin/uadmin"
+	    "github.com/dekunt/uadmin"
     )
 
     // Todo internal model ... 
@@ -43,7 +43,7 @@ External models are models outside of main.go and have their own .go file. Letâ€
 
     package models
 
-    import "github.com/uadmin/uadmin"
+    import "github.com/dekunt/uadmin"
 
     // Category model ...
     type Category struct {

@@ -75,7 +75,7 @@ Now let's create another file inside the api folder named todo_list.go. This wil
         "strings"
 
         "github.com/username/todo/models"
-        "github.com/uadmin/uadmin"
+        "github.com/dekunt/uadmin"
     )
 
     // TodoListHandler !

@@ -5,7 +5,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/uadmin/uadmin/colors"
+	"github.com/dekunt/uadmin/colors"
 )
 
 // Reporting Levels

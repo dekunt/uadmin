@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"github.com/uadmin/uadmin"
+	"github.com/dekunt/uadmin"
 )
 
 // Todo model ...
