@@ -24,8 +24,15 @@ type translation struct {
 	Value   string
 }
 
+var defaultLangCode = "en"
+
 // InitalizeLanguage !
-func initializeLanguage() {
+func initializeLanguage(defaultCode string) {
+	if defaultCode == "" {
+		defaultCode = defaultLangCode
+	} else {
+		defaultLangCode = defaultCode
+	}
 	// Load Multilanguage
 	// multiLanguage, err := ioutil.ReadFile("./templates/uadmin/multilingual.json")
 
@@ -246,7 +253,7 @@ func initializeLanguage() {
 			Code:        lang[2],
 			Active:      false,
 		}
-		if l.Code == "en" {
+		if l.Code == defaultCode {
 			l.AvailableInGui = true
 			l.Active = true
 			l.Default = true
@@ -340,8 +347,9 @@ func Tf(path string, lang string, term string, args ...interface{}) string {
 		}
 
 		// If it doesn't exist then add it to the file
-		if lang != "en" {
-			Tf(path, "en", term, args...)
+		if translation := getTranslationFromFile(lang, term); translation != "" {
+			langMap[term] = translation
+		} else if lang != "en" {
 			langMap[term] = translateMe + term
 		} else {
 			langMap[term] = term
@@ -365,8 +373,8 @@ func Tf(path string, lang string, term string, args ...interface{}) string {
 			}
 
 			// If it doesn't exist then add it to the file
-			if lang != "en" {
-				Tf(strings.Join(pathParts, "/"), "en", term, args...)
+			if lang != defaultLangCode {
+				Tf(strings.Join(pathParts, "/"), defaultLangCode, term, args...)
 				langMap.Fields[pathParts[2]].ErrMsg[term] = translateMe + term
 			} else {
 				langMap.Fields[pathParts[2]].ErrMsg[term] = term
@@ -383,7 +391,7 @@ func Tf(path string, lang string, term string, args ...interface{}) string {
 // Translate Model
 func translateSchema(s *ModelSchema, lang string) {
 	if lang == "" {
-		lang = "en"
+		lang = defaultLangCode
 	}
 
 	pkgName := fmt.Sprint(reflect.TypeOf(models[s.ModelName]))

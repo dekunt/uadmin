@@ -12,12 +12,12 @@ func TestSyncCustomTranslation(t *testing.T) {
 	ar.Active = true
 	ar.Save()
 
-	results := syncCustomTranslation("uadmin/system")
+	results := syncCustomTranslation("uadmin/system", "")
 	if len(results) != len(activeLangs) {
 		t.Errorf("syncCustomTranslation didn't return status for all active languages. Got %d, expected %d", len(results), len(activeLangs))
 	}
 
-	results = syncCustomTranslation("uadmin/system/tags")
+	results = syncCustomTranslation("uadmin/system/tags", "")
 	if len(results) != 0 {
 		t.Errorf("syncCustomTranslation didn't return 0 status invalid path. Got %d, expected %d", len(results), 0)
 	}
@@ -27,7 +27,7 @@ func TestSyncCustomTranslation(t *testing.T) {
 	zh.Active = true
 	zh.Save()
 
-	results = syncCustomTranslation("uadmin/system")
+	results = syncCustomTranslation("uadmin/system", "")
 	if len(results) != len(activeLangs) {
 		t.Errorf("syncCustomTranslation didn't return status for all active languages. Got %d, expected %d", len(results), len(activeLangs))
 	}
@@ -47,7 +47,7 @@ func TestSyncModelTranslation(t *testing.T) {
 	ar.Active = true
 	ar.Save()
 
-	results := syncModelTranslation(Schema["testmodelb"])
+	results := syncModelTranslation(Schema["testmodelb"], "")
 	if len(results) != len(activeLangs) {
 		t.Errorf("syncModelTranslation didn't return status for all active languages. Got %d, expected %d", len(results), len(activeLangs))
 	}
@@ -57,7 +57,7 @@ func TestSyncModelTranslation(t *testing.T) {
 	zh.Active = true
 	zh.Save()
 
-	results = syncModelTranslation(Schema["testmodelb"])
+	results = syncModelTranslation(Schema["testmodelb"], "")
 	if len(results) != len(activeLangs) {
 		t.Errorf("syncCustomTranslation didn't return status for all active languages. Got %d, expected %d", len(results), len(activeLangs))
 	}
@@ -72,7 +72,7 @@ func TestSyncModelTranslation(t *testing.T) {
 		ErrMsg:      "",
 	})
 	Schema["testmodelb"] = s
-	results = syncModelTranslation(Schema["testmodelb"])
+	results = syncModelTranslation(Schema["testmodelb"], "")
 	if len(results) != len(activeLangs) {
 		t.Errorf("syncCustomTranslation didn't return status for all active languages. Got %d, expected %d", len(results), len(activeLangs))
 	}
@@ -81,7 +81,7 @@ func TestSyncModelTranslation(t *testing.T) {
 	s.FieldByName("TestField").Help = "Updated Help for test field"
 	s.FieldByName("TestField").PatternMsg = "Updated test message"
 	Schema["testmodelb"] = s
-	results = syncModelTranslation(Schema["testmodelb"])
+	results = syncModelTranslation(Schema["testmodelb"], "")
 	if len(results) != len(activeLangs) {
 		t.Errorf("syncCustomTranslation didn't return status for all active languages. Got %d, expected %d", len(results), len(activeLangs))
 	}

@@ -52,7 +52,10 @@ type structLanguage struct {
 const translateMe = "Translate me ---> "
 
 // syncCustomTranslation is a function for creating and updating custom translation files
-func syncCustomTranslation(path string) map[string]int {
+func syncCustomTranslation(path, langCode string) map[string]int {
+	if langCode == "" {
+		langCode = defaultLangCode
+	}
 	var err error
 	var buf []byte
 	stat := map[string]int{}
@@ -66,11 +69,11 @@ func syncCustomTranslation(path string) map[string]int {
 	name := pathParts[1]
 
 	os.MkdirAll("./static/i18n/"+group+"/", 0744)
-	fileName := "./static/i18n/" + group + "/" + name + ".en.json"
+	fileName := "./static/i18n/" + group + "/" + name + "." + langCode + ".json"
 	langMap := map[string]string{}
 	if _, err = os.Stat(fileName); os.IsNotExist(err) {
 		ioutil.WriteFile(fileName, []byte{'{', '}'}, 0644)
-		stat["en"] = 0
+		stat[langCode] = 0
 	} else {
 		buf, err = ioutil.ReadFile(fileName)
 		if err != nil {
@@ -82,8 +85,8 @@ func syncCustomTranslation(path string) map[string]int {
 			Trail(ERROR, "Invalid format of system translation file (%s). %s", fileName, err)
 		}
 		for _, lang := range activeLangs {
-			if lang.Code == "en" {
-				stat["en"] = len(langMap)
+			if lang.Code == langCode {
+				stat[langCode] = len(langMap)
 				continue
 			}
 			stat[lang.Code] = 0
@@ -120,11 +123,14 @@ func syncCustomTranslation(path string) map[string]int {
 	return stat
 }
 
-func syncModelTranslation(m ModelSchema) map[string]int {
+func syncModelTranslation(m ModelSchema, langCode string) map[string]int {
+	if langCode == "" {
+		langCode = defaultLangCode
+	}
 	var err error
 	var buf []byte
 	stat := map[string]int{
-		"en": 1,
+		langCode: 1,
 	}
 
 	// Generate/Sync original language file
@@ -160,7 +166,7 @@ func syncModelTranslation(m ModelSchema) map[string]int {
 
 	// Get the model's original language file
 	os.MkdirAll("./static/i18n/"+pkgName+"/", 0744)
-	fileName := "./static/i18n/" + pkgName + "/" + m.ModelName + ".en.json"
+	fileName := "./static/i18n/" + pkgName + "/" + m.ModelName + "." + langCode + ".json"
 
 	// Check if the fist doesn't exist and create it
 	if _, err = os.Stat(fileName); os.IsNotExist(err) {
@@ -249,11 +255,11 @@ func syncModelTranslation(m ModelSchema) map[string]int {
 		// Finally update the model's structLanguage with the updated one from disk
 		structLang = langOnFile
 	}
-	stat["en"] = fileCount
+	stat[langCode] = fileCount
 
 	// Sync active languages
 	for _, lang := range activeLangs {
-		if lang.Code == "en" {
+		if lang.Code == langCode {
 			continue
 		}
 		updateRequired := false

@@ -10,7 +10,7 @@ import (
 
 func main() {
 	uadmin.RootURL = "/admin/"
-	uadmin.Register(
+	uadmin.Register("",
 		models.Todo{},
 		models.Category{},
 		models.Friend{},
@@ -31,5 +31,5 @@ func main() {
 	http.HandleFunc("/api/", api.APIHandler)
 
 	uadmin.Port = 8000
-	uadmin.StartServer()
+	uadmin.StartServer("")
 }

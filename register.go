@@ -25,7 +25,7 @@ var CustomTranslation = []string{
 }
 
 // Register is used to register models to uadmin
-func Register(m ...interface{}) {
+func Register(langCode string, m ...interface{}) {
 	modelList := []interface{}{}
 
 	if models == nil {
@@ -56,7 +56,7 @@ func Register(m ...interface{}) {
 	initializeDB(modelList...)
 
 	// Setup languages
-	initializeLanguage()
+	initializeLanguage(langCode)
 
 	// Store models in Model global variable
 	// and initialize the dashboard
@@ -168,7 +168,7 @@ func Register(m ...interface{}) {
 	// Get Global Schema
 	stat := map[string]int{}
 	for _, v := range CustomTranslation {
-		tempStat := syncCustomTranslation(v)
+		tempStat := syncCustomTranslation(v, langCode)
 		for k, v := range tempStat {
 			stat[k] += v
 		}
@@ -177,15 +177,15 @@ func Register(m ...interface{}) {
 		//t := reflect.TypeOf(v)
 		//Schema[t.Name()], _ = getSchema(v)
 		Schema[k], _ = getSchema(v)
-		tempStat := syncModelTranslation(Schema[k])
+		tempStat := syncModelTranslation(Schema[k], langCode)
 		for k, v := range tempStat {
 			stat[k] += v
 		}
 	}
 	for k, v := range stat {
-		complete := float64(v) / float64(stat["en"])
+		complete := float64(v) / float64(stat[langCode])
 		if complete != 1 {
-			Trail(WARNING, "Translation of %s at %.0f%% [%d/%d]", k, complete*100, v, stat["en"])
+			Trail(WARNING, "Translation of %s at %.0f%% [%d/%d]", k, complete*100, v, stat[langCode])
 		}
 
 	}

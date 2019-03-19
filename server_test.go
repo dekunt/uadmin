@@ -52,6 +52,7 @@ func (testList) A() testList {
 
 func setupFunction() {
 	Register(
+		"",
 		TestStruct1{},
 		TestModelA{},
 		TestModelB{},
@@ -66,7 +67,7 @@ func setupFunction() {
 
 	RegisterInlines(TestModelA{}, map[string]string{"TestModelB": "OtherModelID"})
 
-	go StartServer()
+	go StartServer("")
 	go startEmailServer()
 }
 

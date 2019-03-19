@@ -31,9 +31,9 @@ const w2 = `` +
 	``
 
 // StartServer !
-func StartServer() {
+func StartServer(langCode string) {
 	if !registered {
-		Register()
+		Register(langCode)
 	}
 	if !handlersRegistered {
 		registerHandlers()
@@ -51,9 +51,9 @@ func StartServer() {
 }
 
 // StartSecureServer !
-func StartSecureServer(certFile, keyFile string) {
+func StartSecureServer(langCode, certFile, keyFile string) {
 	if !registered {
-		Register()
+		Register(langCode)
 	}
 	if !handlersRegistered {
 		registerHandlers()

@@ -30,6 +30,9 @@ import (
 )
 
 func getDisplayName(src string) string {
+	if translate := getTranslationFromFile(defaultLangCode, src); translate != "" {
+		return translate
+	}
 	// don't split invalid utf8
 	if !utf8.ValidString(src) {
 		return src

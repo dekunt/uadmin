@@ -116,7 +116,7 @@ func main() {
 			}
 			uadmin.Trail(uadmin.INFO, "Your GOPATH environment variable is not set. Using the default path: %s", goPath)
 		}
-		uadminPath := filepath.Join(goPath, "src", "github.com", "uadmin", "uadmin")
+		uadminPath := filepath.Join(goPath, "src", "github.com", "dekunt", "uadmin")
 		for _, v := range folderList {
 			msg := "Updated"
 			if _, err = os.Stat(filepath.Join(ex, v)); os.IsNotExist(err) {
