@@ -1,6 +1,7 @@
 {
 	"en":
 	{
+		"login": "Login",
 		"password": "Password",
 		"loadingpleasewait...": "loading please wait...",
 		"forgotpassword": "forgot password",
@@ -1104,6 +1105,7 @@
 	},
 	"zh":
 	{
+		"login": "登录",
 		"password": "密码",
 		"loadingpleasewait...": "正在加载...",
 		"forgotpassword": "忘记密码",
