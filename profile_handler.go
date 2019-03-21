@@ -93,6 +93,7 @@ func profileHandler(w http.ResponseWriter, r *http.Request, session *Session) {
 
 				// To logout
 				Logout(r)
+				http.Redirect(w, r, RootURL, 303)
 
 				return
 			}
