@@ -81,14 +81,14 @@
 
           {{ if eq .Schema.Name "Layout" }}
             <a class="btn btn-primary search pull-right" href="/static/uadmin/layout/">
-              <i class="fa fa-plus"></i> {{Tf "uadmin/system" .Language.Code "Add New"}} {{.Schema.ModelSchema.Name}}
+              <i class="fa fa-plus"></i> {{Tf "uadmin/system" .Language.Code "Add New"}} {{Tf "uadmin/system" .Language.Code .Schema.ModelSchema.Name}}
             </a>
           {{ else if .CanAdd}}
             <a class="hidden-sm hidden-md hidden-lg btn btn-primary search pull-right" href="{{.RootURL}}{{.Schema.ModelName}}/new">
               <i class="fa fa-plus"></i></span>
             </a>
             <a class="hidden-xs btn btn-primary search pull-right" href="{{.RootURL}}{{.Schema.ModelName}}/new">
-              <i class="fa fa-plus"></i> {{Tf "uadmin/system" .Language.Code "Add New"}} <span class="camelcaseFix">{{.Schema.Name}}</span>
+              <i class="fa fa-plus"></i> {{Tf "uadmin/system" .Language.Code "Add New"}} <span class="camelcaseFix">{{Tf "uadmin/system" .Language.Code .Schema.Name}}</span>
             </a>
           {{ end }}
 					<span class="hidden-sm hidden-md hidden-lg hidden-xl pull-right">&nbsp;</span>
