@@ -72,7 +72,7 @@ func profileHandler(w http.ResponseWriter, r *http.Request, session *Session) {
 			user.LastName = r.FormValue("LastName")
 			user.Email = r.FormValue("Email")
 			f := c.Schema.FieldByName("Photo")
-			user.Photo = processUpload(r, f, "user", session, &c.Schema)
+			user.Photo = DoProcessUpload(r, f, "user", session, &c.Schema)
 			user.Save()
 		}
 		if r.FormValue("save") == "password" {

@@ -195,3 +195,6 @@ var registered = false
 var handlersRegistered = false
 
 var defaultProgressBarColor = "#07c"
+
+// Upload Handler
+var DefaultProcessUploader ProcessUploadInterface

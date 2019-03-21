@@ -72,7 +72,7 @@ func processForm(modelName string, w http.ResponseWriter, r *http.Request, sessi
 				_ = encoder.Encode(tVal)
 				val = string(buffer.Bytes())
 			} else if f.Type == "image" || f.Type == "file" {
-				val = processUpload(r, f, modelName, session, s)
+				val = DoProcessUpload(r, f, modelName, session, s)
 				if val == "" {
 					continue
 				}
