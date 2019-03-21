@@ -176,7 +176,7 @@ func evaluateObject(obj interface{}, t reflect.Type, s *ModelSchema, lang string
 				log.Println("ERROR: EvaluateObject.Interface.(uadmin.Model) ID NOT OK", v.Interface())
 			}
 			var temp interface{}
-			temp = template.HTML(fmt.Sprintf("<a class='clickable Row_id no-style bold' data-id='%d' href='%s%s/%d'>%s</a>", id, RootURL, s.ModelName, id, html.EscapeString(GetString(obj))))
+			temp = template.HTML(fmt.Sprintf("<a class='clickable Row_id no-style bold' data-id='%d' href='%s%s/%d'>%d</a>", id, RootURL, s.ModelName, id, id))
 			y = append(y, temp)
 		} else if s.Fields[index].Type == cNUMBER {
 			temp := v.Interface()
