@@ -217,6 +217,13 @@ func getSchema(a interface{}) (s ModelSchema, ok bool) {
 				}
 			}
 		}
+		if _, ok := tagMap[cIMAGELIST]; ok {
+			if f.Type != cSTRING {
+				Trail(WARNING, "Invalid imagelist tag in %s.%s, field data type shold be string not (%s).", s.Name, f.Name, f.Type)
+			} else {
+				f.Type = cIMAGELIST
+			}
+		}
 		if _, ok := tagMap[cIMAGE]; ok {
 			if f.Type != cSTRING {
 				Trail(WARNING, "Invalid image tag in %s.%s, field data type shold be string not (%s).", s.Name, f.Name, f.Type)
@@ -277,6 +284,14 @@ func getSchema(a interface{}) (s ModelSchema, ok bool) {
 				f.Type = cCODE
 			}
 		}
+		if _, ok := tagMap[cLONGTEXT]; ok {
+			if f.Type != cSTRING {
+				Trail(WARNING, "Invalid longtext tag in %s.%s, field data type shold be string not (%s).", s.Name, f.Name, f.Type)
+			} else {
+				f.Type = cLONGTEXT
+			}
+		}
+
 
 		// Now we process number extended types
 		if val, ok := tagMap[cPROGRESSBAR]; ok {

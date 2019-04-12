@@ -154,6 +154,25 @@
                                 class="fa fa-question-circle"></i> {{.ErrMsg}}</span>{{ end }}
                         </div>
                     </td>
+                {{else if eq $type "longtext"}}
+                    <td style="width:80%;" class="search">
+                        <label class="col-sm-12 control-label form_label visible-xs" data-toggle="tooltip"
+                               data-placement="bottom" title="{{ .Help }}"><span
+                                class="camelcaseFix">{{.DisplayName}}</span>{{ if eq .Help "" }}{{ else }}
+                        <span class="text-muted" style="font-size:12px;"> <i class="fa fa-question-circle"></i>{{end}}
+                            :{{ if .Required }}<span style="color:#f00;font-weight:bold;">&nbsp;*</span>{{ end }}
+                        </label>
+                        <div class="col-sm-12 {{if ne "" (.ErrMsg)}}has-error{{end}}">
+                            <textarea {{if .Required}}
+                            required {{end}} class="form-control strings" style="font-family:monospace"
+                            name="{{.Name}}" {{if $is_readonly}} readonly {{end}} type="text"
+                            value="" {{ if eq .Pattern "" }}{{ else }}pattern="{{ .Pattern }}" {{ if eq .PatternMsg "" }}{{ else }}oninvalid="setCustomValidity('{{.PatternMsg}}')"{{ end }}{{ end }}>{{.Value}}</textarea>
+                        {{ if eq .Help "" }}{{ else }}<span class="text-muted" style="font-size:12px;"><i
+                                class="fa fa-question-circle"></i> {{.Help}}</span>{{ end }}
+                        {{if ne "" (.ErrMsg)}}<span class="text-muted" style="font-size:12px; color:red;"><i
+                                class="fa fa-question-circle"></i> {{.ErrMsg}}</span>{{ end }}
+                        </div>
+                    </td>
                 {{else if eq $type "code"}}
                     <td style="width:80%;" class="search">
                         <label class="col-sm-12 control-label form_label visible-xs" data-toggle="tooltip"

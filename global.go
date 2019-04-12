@@ -45,6 +45,10 @@ const cLIST = "list"
 // cIMAGE !
 const cIMAGE = "image"
 
+const cIMAGELIST = "imagelist"
+
+const cLONGTEXT = "longtext"
+
 // cFK !
 const cFK = "fk"
 
