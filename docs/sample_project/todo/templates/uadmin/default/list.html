@@ -729,7 +729,7 @@
     if (SchemaMarker == "Layout"){
       var rawFile = a;
     }else{
-      var rawFile = a.substr(0,a.lastIndexOf(".")) + "_raw" + a.substr(a.lastIndexOf("."));
+      var rawFile = a.substr(0,a.lastIndexOf(".")) + a.substr(a.lastIndexOf("."));
     }
     content += '<center><img src="'+rawFile+'" style="max-width:70%;max-height:80%;" id="imgRawImage"/></center>';
     $('.modal-body').html(content);
