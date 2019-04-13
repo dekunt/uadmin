@@ -71,7 +71,7 @@ func processForm(modelName string, w http.ResponseWriter, r *http.Request, sessi
 				encoder.SetEscapeHTML(false)
 				_ = encoder.Encode(tVal)
 				val = string(buffer.Bytes())
-			} else if f.Type == "image" || f.Type == "file" {
+			} else if f.Type == "imagelist" || f.Type == "image" || f.Type == "file" {
 				val = DoProcessUpload(r, f, modelName, session, s)
 				if val == "" {
 					continue
