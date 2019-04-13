@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"encoding/json"
 )
 
 func getFormData(a interface{}, r *http.Request, session *Session, s *ModelSchema, user *User) {
@@ -73,6 +74,14 @@ func getFormData(a interface{}, r *http.Request, session *Session, s *ModelSchem
 			} else {
 				value = fieldValue.Interface()
 			}
+		} else if f.Type == cIMAGELIST {
+			var arr = make([]string, 0)
+			if obj := fieldValue.Interface(); obj != nil {
+				if jsonStr, ok := obj.(string); ok {
+					json.Unmarshal([]byte(jsonStr), &arr)
+				}
+			}
+			value = arr
 		} else if f.Type == cFK {
 			// Get selected items's ID
 			fkValue, _ := strconv.ParseUint(fmt.Sprint(fieldValue.Interface()), 10, 64)

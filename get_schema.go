@@ -186,7 +186,13 @@ func getSchema(a interface{}) (s ModelSchema, ok bool) {
 				continue
 			}
 		}
-		if t.Field(index).Type.Kind() == reflect.Slice {
+		if _, ok := tagMap[cIMAGELIST]; ok {
+			if f.Type != cSTRING {
+				Trail(WARNING, "Invalid imagelist tag in %s.%s, field data type shold be string not (%s).", s.Name, f.Name, f.Type)
+			} else {
+				f.Type = cIMAGELIST
+			}
+		} else if t.Field(index).Type.Kind() == reflect.Slice {
 			f.Type = cM2M
 		}
 
@@ -215,13 +221,6 @@ func getSchema(a interface{}) (s ModelSchema, ok bool) {
 						Active:  lang.Active,
 					})
 				}
-			}
-		}
-		if _, ok := tagMap[cIMAGELIST]; ok {
-			if f.Type != cSTRING {
-				Trail(WARNING, "Invalid imagelist tag in %s.%s, field data type shold be string not (%s).", s.Name, f.Name, f.Type)
-			} else {
-				f.Type = cIMAGELIST
 			}
 		}
 		if _, ok := tagMap[cIMAGE]; ok {

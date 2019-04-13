@@ -14,6 +14,7 @@ import (
 
 	"github.com/jinzhu/gorm"
 	"github.com/dekunt/uadmin/helper"
+	"encoding/json"
 )
 
 // GetListSchema returns a schema for list view
@@ -292,6 +293,20 @@ func evaluateObject(obj interface{}, t reflect.Type, s *ModelSchema, lang string
 			}
 		} else if s.Fields[index].Type == cIMAGE {
 			temp := template.HTML(fmt.Sprintf(`<img class="hvr-grow pointer image_trigger" style="max-width: 50px; height: auto;" src="%s" />`, v.Interface()))
+			y = append(y, temp)
+
+		} else if s.Fields[index].Type == cIMAGELIST {
+			builder := strings.Builder{}
+			if obj := v.Interface(); obj != nil {
+				if jsonStr, ok := obj.(string); ok {
+					var arr = make([]string, 0)
+					json.Unmarshal([]byte(jsonStr), &arr)
+					for _, str := range arr {
+						builder.WriteString(fmt.Sprintf(`<img class="hvr-grow pointer image_trigger" style="max-width: 50px; height: auto;" src="%s" />`, str))
+					}
+				}
+			}
+			temp := template.HTML(builder.String())
 			y = append(y, temp)
 
 		} else if s.Fields[index].Type == cFILE {
